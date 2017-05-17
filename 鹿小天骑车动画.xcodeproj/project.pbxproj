@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35794F6A289AFC2C47CB27B3 /* libPods-鹿小天骑车动画.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CCBDECB6E0039C4446D25B /* libPods-鹿小天骑车动画.a */; };
+		D33F9BE71EC45FB100387F6F /* UIColor+Fruitday.m in Sources */ = {isa = PBXBuildFile; fileRef = D33F9BE61EC45FB100387F6F /* UIColor+Fruitday.m */; };
+		D33F9BEA1EC46B4A00387F6F /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = D33F9BE91EC46B4A00387F6F /* ViewController2.m */; };
+		D33F9BF01EC46C2800387F6F /* FDHomeDismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D33F9BED1EC46C2800387F6F /* FDHomeDismissingAnimator.m */; };
+		D33F9BF11EC46C2800387F6F /* FDHomePresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D33F9BEF1EC46C2800387F6F /* FDHomePresentingAnimator.m */; };
+		D38F526D1EC4596000FEAFD5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F526C1EC4596000FEAFD5 /* main.m */; };
+		D38F52701EC4596000FEAFD5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F526F1EC4596000FEAFD5 /* AppDelegate.m */; };
+		D38F52731EC4596000FEAFD5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F52721EC4596000FEAFD5 /* ViewController.m */; };
+		D38F52761EC4596000FEAFD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38F52741EC4596000FEAFD5 /* Main.storyboard */; };
+		D38F52781EC4596000FEAFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38F52771EC4596000FEAFD5 /* Assets.xcassets */; };
+		D38F527B1EC4596000FEAFD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38F52791EC4596000FEAFD5 /* LaunchScreen.storyboard */; };
+		D38F52841EC45CA400FEAFD5 /* LXTRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F52831EC45CA400FEAFD5 /* LXTRefreshHeader.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		061CDB9964940CC25D3C3D92 /* Pods-鹿小天骑车动画.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-鹿小天骑车动画.release.xcconfig"; path = "Pods/Target Support Files/Pods-鹿小天骑车动画/Pods-鹿小天骑车动画.release.xcconfig"; sourceTree = "<group>"; };
+		07CCBDECB6E0039C4446D25B /* libPods-鹿小天骑车动画.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-鹿小天骑车动画.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AE27801B08A48FBE34EF505 /* Pods-鹿小天骑车动画.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-鹿小天骑车动画.debug.xcconfig"; path = "Pods/Target Support Files/Pods-鹿小天骑车动画/Pods-鹿小天骑车动画.debug.xcconfig"; sourceTree = "<group>"; };
+		D33F9BE51EC45FB100387F6F /* UIColor+Fruitday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Fruitday.h"; sourceTree = "<group>"; };
+		D33F9BE61EC45FB100387F6F /* UIColor+Fruitday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Fruitday.m"; sourceTree = "<group>"; };
+		D33F9BE81EC46B4A00387F6F /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		D33F9BE91EC46B4A00387F6F /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		D33F9BEC1EC46C2800387F6F /* FDHomeDismissingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDHomeDismissingAnimator.h; sourceTree = "<group>"; };
+		D33F9BED1EC46C2800387F6F /* FDHomeDismissingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDHomeDismissingAnimator.m; sourceTree = "<group>"; };
+		D33F9BEE1EC46C2800387F6F /* FDHomePresentingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDHomePresentingAnimator.h; sourceTree = "<group>"; };
+		D33F9BEF1EC46C2800387F6F /* FDHomePresentingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDHomePresentingAnimator.m; sourceTree = "<group>"; };
+		D38F52681EC4596000FEAFD5 /* 鹿小天骑车动画.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "鹿小天骑车动画.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D38F526C1EC4596000FEAFD5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D38F526E1EC4596000FEAFD5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D38F526F1EC4596000FEAFD5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D38F52711EC4596000FEAFD5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D38F52721EC4596000FEAFD5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D38F52751EC4596000FEAFD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D38F52771EC4596000FEAFD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D38F527A1EC4596000FEAFD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D38F527C1EC4596000FEAFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D38F52821EC45CA400FEAFD5 /* LXTRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXTRefreshHeader.h; sourceTree = "<group>"; };
+		D38F52831EC45CA400FEAFD5 /* LXTRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXTRefreshHeader.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D38F52651EC4596000FEAFD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35794F6A289AFC2C47CB27B3 /* libPods-鹿小天骑车动画.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67250C1565C60E7A98C6636E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AE27801B08A48FBE34EF505 /* Pods-鹿小天骑车动画.debug.xcconfig */,
+				061CDB9964940CC25D3C3D92 /* Pods-鹿小天骑车动画.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D33F9BEB1EC46C2800387F6F /* FDHomeAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				D33F9BEC1EC46C2800387F6F /* FDHomeDismissingAnimator.h */,
+				D33F9BED1EC46C2800387F6F /* FDHomeDismissingAnimator.m */,
+				D33F9BEE1EC46C2800387F6F /* FDHomePresentingAnimator.h */,
+				D33F9BEF1EC46C2800387F6F /* FDHomePresentingAnimator.m */,
+			);
+			path = FDHomeAnimator;
+			sourceTree = "<group>";
+		};
+		D38F525F1EC4596000FEAFD5 = {
+			isa = PBXGroup;
+			children = (
+				D38F526A1EC4596000FEAFD5 /* 鹿小天骑车动画 */,
+				D38F52691EC4596000FEAFD5 /* Products */,
+				67250C1565C60E7A98C6636E /* Pods */,
+				FD925B1E432E78574B9DBFC3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D38F52691EC4596000FEAFD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D38F52681EC4596000FEAFD5 /* 鹿小天骑车动画.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D38F526A1EC4596000FEAFD5 /* 鹿小天骑车动画 */ = {
+			isa = PBXGroup;
+			children = (
+				D33F9BEB1EC46C2800387F6F /* FDHomeAnimator */,
+				D33F9BE51EC45FB100387F6F /* UIColor+Fruitday.h */,
+				D33F9BE61EC45FB100387F6F /* UIColor+Fruitday.m */,
+				D38F526E1EC4596000FEAFD5 /* AppDelegate.h */,
+				D38F526F1EC4596000FEAFD5 /* AppDelegate.m */,
+				D38F52711EC4596000FEAFD5 /* ViewController.h */,
+				D38F52721EC4596000FEAFD5 /* ViewController.m */,
+				D33F9BE81EC46B4A00387F6F /* ViewController2.h */,
+				D33F9BE91EC46B4A00387F6F /* ViewController2.m */,
+				D38F52741EC4596000FEAFD5 /* Main.storyboard */,
+				D38F52771EC4596000FEAFD5 /* Assets.xcassets */,
+				D38F52791EC4596000FEAFD5 /* LaunchScreen.storyboard */,
+				D38F527C1EC4596000FEAFD5 /* Info.plist */,
+				D38F526B1EC4596000FEAFD5 /* Supporting Files */,
+				D38F52821EC45CA400FEAFD5 /* LXTRefreshHeader.h */,
+				D38F52831EC45CA400FEAFD5 /* LXTRefreshHeader.m */,
+			);
+			path = "鹿小天骑车动画";
+			sourceTree = "<group>";
+		};
+		D38F526B1EC4596000FEAFD5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D38F526C1EC4596000FEAFD5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD925B1E432E78574B9DBFC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07CCBDECB6E0039C4446D25B /* libPods-鹿小天骑车动画.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D38F52671EC4596000FEAFD5 /* 鹿小天骑车动画 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D38F527F1EC4596000FEAFD5 /* Build configuration list for PBXNativeTarget "鹿小天骑车动画" */;
+			buildPhases = (
+				69B5AAF0BC45A3940BBA3A5A /* [CP] Check Pods Manifest.lock */,
+				D38F52641EC4596000FEAFD5 /* Sources */,
+				D38F52651EC4596000FEAFD5 /* Frameworks */,
+				D38F52661EC4596000FEAFD5 /* Resources */,
+				8E991F2477A134F92DC88ABB /* [CP] Embed Pods Frameworks */,
+				6EAA746BD8FD356A486AAC18 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "鹿小天骑车动画";
+			productName = "鹿小天骑车动画";
+			productReference = D38F52681EC4596000FEAFD5 /* 鹿小天骑车动画.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D38F52601EC4596000FEAFD5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = DaBin;
+				TargetAttributes = {
+					D38F52671EC4596000FEAFD5 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 2A6G8X87KS;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = D38F52631EC4596000FEAFD5 /* Build configuration list for PBXProject "鹿小天骑车动画" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D38F525F1EC4596000FEAFD5;
+			productRefGroup = D38F52691EC4596000FEAFD5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D38F52671EC4596000FEAFD5 /* 鹿小天骑车动画 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D38F52661EC4596000FEAFD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D38F527B1EC4596000FEAFD5 /* LaunchScreen.storyboard in Resources */,
+				D38F52781EC4596000FEAFD5 /* Assets.xcassets in Resources */,
+				D38F52761EC4596000FEAFD5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69B5AAF0BC45A3940BBA3A5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6EAA746BD8FD356A486AAC18 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-鹿小天骑车动画/Pods-鹿小天骑车动画-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E991F2477A134F92DC88ABB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-鹿小天骑车动画/Pods-鹿小天骑车动画-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D38F52641EC4596000FEAFD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33F9BF01EC46C2800387F6F /* FDHomeDismissingAnimator.m in Sources */,
+				D38F52731EC4596000FEAFD5 /* ViewController.m in Sources */,
+				D33F9BF11EC46C2800387F6F /* FDHomePresentingAnimator.m in Sources */,
+				D38F52841EC45CA400FEAFD5 /* LXTRefreshHeader.m in Sources */,
+				D38F52701EC4596000FEAFD5 /* AppDelegate.m in Sources */,
+				D38F526D1EC4596000FEAFD5 /* main.m in Sources */,
+				D33F9BE71EC45FB100387F6F /* UIColor+Fruitday.m in Sources */,
+				D33F9BEA1EC46B4A00387F6F /* ViewController2.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D38F52741EC4596000FEAFD5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D38F52751EC4596000FEAFD5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D38F52791EC4596000FEAFD5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D38F527A1EC4596000FEAFD5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D38F527D1EC4596000FEAFD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D38F527E1EC4596000FEAFD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D38F52801EC4596000FEAFD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AE27801B08A48FBE34EF505 /* Pods-鹿小天骑车动画.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: deng bin (YDT465K6AF)";
+				DEVELOPMENT_TEAM = 2A6G8X87KS;
+				INFOPLIST_FILE = "鹿小天骑车动画/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DaBin.XXXX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "90c58080-7e5f-4028-b0d4-e26d5713f8eb";
+				PROVISIONING_PROFILE_SPECIFIER = DengBinDeWildcardPF;
+			};
+			name = Debug;
+		};
+		D38F52811EC4596000FEAFD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061CDB9964940CC25D3C3D92 /* Pods-鹿小天骑车动画.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: deng bin (YDT465K6AF)";
+				DEVELOPMENT_TEAM = 2A6G8X87KS;
+				INFOPLIST_FILE = "鹿小天骑车动画/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DaBin.XXXX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "90c58080-7e5f-4028-b0d4-e26d5713f8eb";
+				PROVISIONING_PROFILE_SPECIFIER = DengBinDeWildcardPF;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D38F52631EC4596000FEAFD5 /* Build configuration list for PBXProject "鹿小天骑车动画" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D38F527D1EC4596000FEAFD5 /* Debug */,
+				D38F527E1EC4596000FEAFD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D38F527F1EC4596000FEAFD5 /* Build configuration list for PBXNativeTarget "鹿小天骑车动画" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D38F52801EC4596000FEAFD5 /* Debug */,
+				D38F52811EC4596000FEAFD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D38F52601EC4596000FEAFD5 /* Project object */;
+}

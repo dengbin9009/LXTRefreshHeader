@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x9e7f;&#x5c0f;&#x5929;&#x9a91;&#x8f66;&#x52a8;&#x753b;/ViewController.m"
+            timestampString = "516709981.226351"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-open"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ViewController open]"
+                  moduleName = "&#x9e7f;&#x5c0f;&#x5929;&#x9a91;&#x8f66;&#x52a8;&#x753b;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/DaBin/Code/GitHub/LXTRefreshHeader/%E9%B9%BF%E5%B0%8F%E5%A4%A9%E9%AA%91%E8%BD%A6%E5%8A%A8%E7%94%BB/ViewController.m"
+                  timestampString = "516710739.836775"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "39">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__22-[ViewController open]_block_invoke"
+                  moduleName = "&#x9e7f;&#x5c0f;&#x5929;&#x9a91;&#x8f66;&#x52a8;&#x753b;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/DaBin/Code/GitHub/LXTRefreshHeader/%E9%B9%BF%E5%B0%8F%E5%A4%A9%E9%AA%91%E8%BD%A6%E5%8A%A8%E7%94%BB/ViewController.m"
+                  timestampString = "516710739.838294"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x9e7f;&#x5c0f;&#x5929;&#x9a91;&#x8f66;&#x52a8;&#x753b;/LXTRefreshHeader.m"
+            timestampString = "516711790.493375"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "-initializAutolayout"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
