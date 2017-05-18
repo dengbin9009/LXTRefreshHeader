@@ -18,7 +18,7 @@
 		D38F52761EC4596000FEAFD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38F52741EC4596000FEAFD5 /* Main.storyboard */; };
 		D38F52781EC4596000FEAFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38F52771EC4596000FEAFD5 /* Assets.xcassets */; };
 		D38F527B1EC4596000FEAFD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38F52791EC4596000FEAFD5 /* LaunchScreen.storyboard */; };
-		D38F52841EC45CA400FEAFD5 /* LXTRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D38F52831EC45CA400FEAFD5 /* LXTRefreshHeader.m */; };
+		D3BD790C1ECD8B9A003BC2A6 /* LXTRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BD790B1ECD8B9A003BC2A6 /* LXTRefreshHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +43,8 @@
 		D38F52771EC4596000FEAFD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D38F527A1EC4596000FEAFD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D38F527C1EC4596000FEAFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D38F52821EC45CA400FEAFD5 /* LXTRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXTRefreshHeader.h; sourceTree = "<group>"; };
-		D38F52831EC45CA400FEAFD5 /* LXTRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXTRefreshHeader.m; sourceTree = "<group>"; };
+		D3BD790A1ECD8B9A003BC2A6 /* LXTRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXTRefreshHeader.h; sourceTree = "<group>"; };
+		D3BD790B1ECD8B9A003BC2A6 /* LXTRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXTRefreshHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +100,7 @@
 		D38F526A1EC4596000FEAFD5 /* 鹿小天骑车动画 */ = {
 			isa = PBXGroup;
 			children = (
+				D3BD79091ECD8B9A003BC2A6 /* LXTRefreshHeader */,
 				D33F9BEB1EC46C2800387F6F /* FDHomeAnimator */,
 				D33F9BE51EC45FB100387F6F /* UIColor+Fruitday.h */,
 				D33F9BE61EC45FB100387F6F /* UIColor+Fruitday.m */,
@@ -114,8 +115,6 @@
 				D38F52791EC4596000FEAFD5 /* LaunchScreen.storyboard */,
 				D38F527C1EC4596000FEAFD5 /* Info.plist */,
 				D38F526B1EC4596000FEAFD5 /* Supporting Files */,
-				D38F52821EC45CA400FEAFD5 /* LXTRefreshHeader.h */,
-				D38F52831EC45CA400FEAFD5 /* LXTRefreshHeader.m */,
 			);
 			path = "鹿小天骑车动画";
 			sourceTree = "<group>";
@@ -126,6 +125,15 @@
 				D38F526C1EC4596000FEAFD5 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3BD79091ECD8B9A003BC2A6 /* LXTRefreshHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D3BD790A1ECD8B9A003BC2A6 /* LXTRefreshHeader.h */,
+				D3BD790B1ECD8B9A003BC2A6 /* LXTRefreshHeader.m */,
+			);
+			path = LXTRefreshHeader;
 			sourceTree = "<group>";
 		};
 		FD925B1E432E78574B9DBFC3 /* Frameworks */ = {
@@ -262,9 +270,9 @@
 				D33F9BF01EC46C2800387F6F /* FDHomeDismissingAnimator.m in Sources */,
 				D38F52731EC4596000FEAFD5 /* ViewController.m in Sources */,
 				D33F9BF11EC46C2800387F6F /* FDHomePresentingAnimator.m in Sources */,
-				D38F52841EC45CA400FEAFD5 /* LXTRefreshHeader.m in Sources */,
 				D38F52701EC4596000FEAFD5 /* AppDelegate.m in Sources */,
 				D38F526D1EC4596000FEAFD5 /* main.m in Sources */,
+				D3BD790C1ECD8B9A003BC2A6 /* LXTRefreshHeader.m in Sources */,
 				D33F9BE71EC45FB100387F6F /* UIColor+Fruitday.m in Sources */,
 				D33F9BEA1EC46B4A00387F6F /* ViewController2.m in Sources */,
 			);

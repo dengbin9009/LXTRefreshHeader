@@ -126,7 +126,7 @@ static CGFloat const balloonBottom        = 18;
     self.refreshBlockOffsetY = LXTDoubleRefreshBlockOffsetY;
     self.extraBlockOffsetY = LXTDoubleExtraBlockOffsetY;
     self.backgroundColor = [UIColor clearColor];
-    self.clipsToBounds = NO;
+    self.clipsToBounds = YES;
     
     [self initialization];
 }
@@ -341,6 +341,7 @@ static CGFloat const balloonBottom        = 18;
 - (void)setRefreshHeaderHeight:(CGFloat)refreshHeaderHeight{
     _refreshHeaderHeight = refreshHeaderHeight;
     self.mj_h = refreshHeaderHeight;
+    [self initializAutolayout];
 }
 
 - (void)setExtraBlockOffsetY:(CGFloat)extraBlockOffsetY{
