@@ -12,6 +12,8 @@
 #import "FDHomePresentingAnimator.h"
 #import "FDHomeDismissingAnimator.h"
 
+static CGFloat kLXT_RefreshHeaderHeight = 0;
+
 @interface ViewController ()<UIViewControllerTransitioningDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -46,8 +48,8 @@
     } andExtraBlock:^{
         [weakSelf open];
     }];
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-    header.refreshHeaderHeight = LXTRefreshHeaderHeight+screenHeight;
+    kLXT_RefreshHeaderHeight = [UIScreen mainScreen].bounds.size.width*(1075/375.0);
+    header.refreshHeaderHeight = kLXT_RefreshHeaderHeight;
     header.extraBlockOffsetY = LXTRefreshHeaderHeight;
     // 强转只为去除警告
     self.tableView.mj_header = (MJRefreshHeader *)header;
@@ -76,8 +78,7 @@
 
 - (void)pushTableViewDown{
     self.originalFrame = self.tableView.frame;
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-    [self.tableView setFrame:CGRectMake(0, (screenHeight+LXTDoubleRefreshBlockOffsetY), CGRectGetWidth(self.tableView.frame), CGRectGetHeight(self.tableView.frame))];
+    [self.tableView setFrame:CGRectMake(0, kLXT_RefreshHeaderHeight, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(self.tableView.frame))];
 }
 
 - (void)resetTableViewContentInset{

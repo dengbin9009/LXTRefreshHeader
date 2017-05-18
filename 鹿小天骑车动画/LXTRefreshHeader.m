@@ -162,6 +162,7 @@ static CGFloat const balloonBottom        = 18;
     self.backgroundImageView = [UIImageView new];
     self.backgroundImageView.image = [UIImage imageNamed:@"LXT_2ndFloor_bg"];
     self.backgroundImageView.backgroundColor = [UIColor clearColor];
+    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:self.backgroundImageView];
     
     // 道路图片
@@ -295,11 +296,6 @@ static CGFloat const balloonBottom        = 18;
         make.width.equalTo(@(horsemanViewWidth));
         make.height.equalTo(@(horsemanViewHeight));
     }];
-//    [self.statusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.equalTo(@(0));
-//        make.bottom.equalTo(@0);
-//        make.height.equalTo(@(20));
-//    }];
     
     // 给道路增加透视效果
     CATransform3D rotate = CATransform3DMakeRotation(LXT_radians(90), 1, 0, 0);
@@ -309,8 +305,8 @@ static CGFloat const balloonBottom        = 18;
     
     // 气球
     self.balloonImageView.frame = CGRectMake(balloonLeft, [self balloonTop], balloonWidth, balloonHeight);
-    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    self.statusLabel.frame = CGRectMake(0, self.mj_h-20, screenWidth, 20);
+    // 状态label
+    self.statusLabel.frame = CGRectMake(0, self.mj_h-20, self.mj_w, 20);
 
     // 由于horsemanView大小固定，为了效率，里面的view可以不用约束设置
     self.carEndImageView.frame = CGRectMake(2, carEndTop, carEndWidth, carEndHeight);
