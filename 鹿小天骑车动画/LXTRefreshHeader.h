@@ -46,5 +46,8 @@ typedef void (^LXTRefreshExtraBlock)();
 // 下拉执行刷新的高度
 @property (nonatomic, assign) CGFloat extraBlockOffsetY;
 
+// 最少执行的动画时间
+@property (nonatomic, assign) CGFloat leastDurationForAnimation;
+
 
 @end

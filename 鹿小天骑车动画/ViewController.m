@@ -42,15 +42,21 @@ static CGFloat kLXT_RefreshHeaderHeight = 0;
 {
     __weak __typeof(&*self)weakSelf = self;
     LXTRefreshHeader *header = [LXTRefreshHeader headerWithRefreshingBlock:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.tableView.mj_header endRefreshing];
-        });
+//        });
     } andExtraBlock:^{
         [weakSelf open];
     }];
+//    LXTRefreshHeader *header = [LXTRefreshHeader headerWithRefreshingBlock:^{
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [weakSelf.tableView.mj_header endRefreshing];
+//        });
+//    } andExtraBlock:NULL];
     kLXT_RefreshHeaderHeight = [UIScreen mainScreen].bounds.size.width*(1075/375.0);
     header.refreshHeaderHeight = kLXT_RefreshHeaderHeight;
     header.extraBlockOffsetY = LXTRefreshHeaderHeight;
+    header.leastDurationForAnimation = 3;
     // 强转只为去除警告
     self.tableView.mj_header = (MJRefreshHeader *)header;
 }

@@ -227,18 +227,21 @@ static CGFloat const balloonBottom        = 18;
     self.eyeRight1ImageView = [UIImageView new];
     self.eyeRight1ImageView.image = [UIImage imageNamed:@"LXT_eye2"];
     self.eyeRight1ImageView.backgroundColor = [UIColor clearColor];
+    self.eyeRight1ImageView.contentMode = UIViewContentModeCenter;
     [self.horsemanView addSubview:self.eyeRight1ImageView];
     
     // 左眼黑色眼珠
     self.eyeLeft2ImageView = [UIImageView new];
     self.eyeLeft2ImageView.image = [UIImage imageNamed:@"LXT_eye3"];
     self.eyeLeft2ImageView.backgroundColor = [UIColor clearColor];
+    self.eyeLeft2ImageView.contentMode = UIViewContentModeCenter;
     [self.horsemanView addSubview:self.eyeLeft2ImageView];
     
     // 右眼黑色眼珠
     self.eyeRight2ImageView = [UIImageView new];
     self.eyeRight2ImageView.image = [UIImage imageNamed:@"LXT_eye3"];
     self.eyeRight2ImageView.backgroundColor = [UIColor clearColor];
+    self.eyeRight2ImageView.contentMode = UIViewContentModeCenter;
     [self.horsemanView addSubview:self.eyeRight2ImageView];
     
     // 右眼黑色眼珠
@@ -359,7 +362,7 @@ static CGFloat const balloonBottom        = 18;
 }
 
 - (CGFloat)balloonTop{
-    CGFloat top = self.frame.size.height-balloonBottom-balloonHeight;
+    CGFloat top = self.mj_h-balloonBottom-balloonHeight;
     return top;
 }
 
@@ -369,7 +372,6 @@ static CGFloat const balloonBottom        = 18;
 - (void)removeAllAnimation{
     self.stopAllAnimation = YES;
     self.roadLineView2.hidden = YES;
-//    self.balloonImageView.hidden = YES;
     if ( [self.timer isValid] ) {
         [self.timer invalidate];
         anchor = minAnchorPointX;
@@ -387,7 +389,6 @@ static CGFloat const balloonBottom        = 18;
 - (void)executeAllAnimation{
     self.stopAllAnimation = NO;
     self.roadLineView2.hidden = NO;
-//    self.balloonImageView.hidden = NO;
     [self executeRoadLineAnimation];
     [self executeHorsemanAnimation];
     [self executeHorsemanEyeAnimation];
@@ -413,8 +414,8 @@ static CGFloat anchor2 = -maxAnchorPointX2;
         [timer invalidate];
         return ;
     }
-    anchor+=0.015;
-    anchor2+=0.015;
+    anchor+=0.01;
+    anchor2+=0.01;
     if ( anchor>=maxAnchorPointX2 ) {
         anchor=-maxAnchorPointX2;
     }
@@ -546,6 +547,11 @@ static CGFloat anchor2 = -maxAnchorPointX2;
 // 执行骑手眼睛左右移动的动画
 - (void)executeHorsemanEyeAnimation{
     if ( self.stopAllAnimation ) return;
+    [self.eyeLeft1ImageView pop_removeAllAnimations];
+    [self.eyeLeft2ImageView pop_removeAllAnimations];
+    [self.eyeRight1ImageView pop_removeAllAnimations];
+    [self.eyeRight2ImageView pop_removeAllAnimations];
+    
     @weakify(self);
     CGFloat duration = 0.175*3;
     // 眼睛
@@ -554,65 +560,69 @@ static CGFloat anchor2 = -maxAnchorPointX2;
     CGFloat eye1RightframeX = self.eyeRight1Center.x-eye1Width/2.0+3;
     CGFloat eye2RightframeX = self.eyeRight2Center.x-eye2Width/2.0+2;
     
+    CGFloat gap1 = 0.5;
+    CGFloat gap2 = 1;
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration/5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
+    
         POPBasicAnimation *eyeLeft1LeftAni = [POPBasicAnimation linearAnimation];
         eyeLeft1LeftAni.property = [POPAnimatableProperty propertyWithName:kPOPLayerPositionX];
-        eyeLeft1LeftAni.toValue = [NSValue valueWithCGPoint:CGPointMake(eye1LeftframeX-0.5, self.eyeLeft1Center.y)];
+        eyeLeft1LeftAni.toValue = @(eye1LeftframeX-gap1);
         eyeLeft1LeftAni.duration = duration;
-        [self.eyeLeft1ImageView pop_addAnimation:eyeLeft1LeftAni forKey:@"eyeLeft1Animation"];
+        [self.eyeLeft1ImageView.layer pop_addAnimation:eyeLeft1LeftAni forKey:@"eyeLeft1Animation"];
         [eyeLeft1LeftAni setCompletionBlock:^(POPAnimation *anim, BOOL finish) {
             @strongify(self);
             POPBasicAnimation *eyeLeft1RightAni = [POPBasicAnimation linearAnimation];
             eyeLeft1RightAni.property = [POPAnimatableProperty propertyWithName:kPOPLayerPositionX];
-            eyeLeft1RightAni.toValue = [NSValue valueWithCGPoint:CGPointMake(eye1LeftframeX+0.5, self.eyeLeft1Center.y)];
+            eyeLeft1RightAni.toValue = @(eye1LeftframeX+gap1);
             eyeLeft1RightAni.duration = duration;
-            [self.eyeLeft1ImageView pop_addAnimation:eyeLeft1RightAni forKey:@"eyeLeft1Animation"];
+            [self.eyeLeft1ImageView.layer pop_addAnimation:eyeLeft1RightAni forKey:@"eyeLeft1Animation"];
+            [eyeLeft1RightAni setCompletionBlock:^(POPAnimation *anim, BOOL finish) {
+                [self executeHorsemanEyeAnimation];
+            }];
         }];
-        
+
         POPBasicAnimation *eyeLeft2LeftAni = [POPBasicAnimation linearAnimation];
         eyeLeft2LeftAni.property = [POPAnimatableProperty propertyWithName:kPOPLayerPositionX];
-        eyeLeft2LeftAni.toValue = [NSValue valueWithCGPoint:CGPointMake(eye2LeftframeX-1, self.eyeLeft2Center.y)];
+        eyeLeft2LeftAni.toValue = @(eye2LeftframeX-gap2);
         eyeLeft2LeftAni.duration = duration;
-        [self.eyeLeft2ImageView pop_addAnimation:eyeLeft2LeftAni forKey:@"eyeLeft2Animation"];
+        [self.eyeLeft2ImageView.layer pop_addAnimation:eyeLeft2LeftAni forKey:@"eyeLeft2Animation"];
         [eyeLeft2LeftAni setCompletionBlock:^(POPAnimation *anim, BOOL finish) {
             @strongify(self);
             POPBasicAnimation *eyeLeft2RightAni = [POPBasicAnimation linearAnimation];
             eyeLeft2RightAni.property = [POPAnimatableProperty propertyWithName:kPOPLayerPositionX];
-            eyeLeft2RightAni.toValue = [NSValue valueWithCGPoint:CGPointMake(eye2LeftframeX+1, self.eyeLeft2Center.y)];
+            eyeLeft2RightAni.toValue = @(eye2LeftframeX+gap2);
             eyeLeft2RightAni.duration = duration;
-            [self.eyeLeft2ImageView pop_addAnimation:eyeLeft2RightAni forKey:@"eyeLeft2Animation"];
+            [self.eyeLeft2ImageView.layer pop_addAnimation:eyeLeft2RightAni forKey:@"eyeLeft2Animation"];
         }];
-        
+    
         POPBasicAnimation *eyeRight1LeftAni = [POPBasicAnimation linearAnimation];
         eyeRight1LeftAni.property = [POPAnimatableProperty propertyWithName:kPOPLayerPositionX];
-        eyeRight1LeftAni.toValue = [NSValue valueWithCGPoint:CGPointMake(eye1RightframeX-0.5, self.eyeRight1Center.y)];
+        eyeRight1LeftAni.toValue = @(eye1RightframeX-gap1);
         eyeRight1LeftAni.duration = duration;
-        [self.eyeRight1ImageView pop_addAnimation:eyeRight1LeftAni forKey:@"eyeRight1Animation"];
+        [self.eyeRight1ImageView.layer pop_addAnimation:eyeRight1LeftAni forKey:@"eyeRight1Animation"];
         [eyeRight1LeftAni setCompletionBlock:^(POPAnimation *anim, BOOL finish) {
             @strongify(self);
             POPBasicAnimation *eyeRight1RightAni = [POPBasicAnimation linearAnimation];
             eyeRight1RightAni.property = [POPAnimatableProperty propertyWithName:kPOPLayerPositionX];
-            eyeRight1RightAni.toValue = [NSValue valueWithCGPoint:CGPointMake(eye1RightframeX+0.5, self.eyeRight1Center.y)];
+            eyeRight1RightAni.toValue = @(eye1RightframeX+gap1);
             eyeRight1RightAni.duration = duration;
-            [self.eyeRight1ImageView pop_addAnimation:eyeRight1RightAni forKey:@"eyeRight1Animation"];
+            [self.eyeRight1ImageView.layer pop_addAnimation:eyeRight1RightAni forKey:@"eyeRight1Animation"];
+
         }];
-        
+    
         POPBasicAnimation *eyeRight2LeftAni = [POPBasicAnimation linearAnimation];
         eyeRight2LeftAni.property = [POPAnimatableProperty propertyWithName:kPOPLayerPositionX];
-        eyeRight2LeftAni.toValue = [NSValue valueWithCGPoint:CGPointMake(eye2RightframeX-1, self.eyeRight2Center.y)];
+        eyeRight2LeftAni.toValue = @(eye2RightframeX-gap2);
         eyeRight2LeftAni.duration = duration;
-        [self.eyeRight2ImageView pop_addAnimation:eyeRight2LeftAni forKey:@"eyeRight2Animation"];
+        [self.eyeRight2ImageView.layer pop_addAnimation:eyeRight2LeftAni forKey:@"eyeRight2Animation"];
         [eyeRight2LeftAni setCompletionBlock:^(POPAnimation *anim, BOOL finish) {
             @strongify(self);
             POPBasicAnimation *eyeRight2RightAni = [POPBasicAnimation linearAnimation];
             eyeRight2RightAni.property = [POPAnimatableProperty propertyWithName:kPOPLayerPositionX];
-            eyeRight2RightAni.toValue = [NSValue valueWithCGPoint:CGPointMake(eye2RightframeX+1, self.eyeRight2Center.y)];
+            eyeRight2RightAni.toValue = @(eye2RightframeX+gap2);
             eyeRight2RightAni.duration = duration;
-            [self.eyeRight2ImageView pop_addAnimation:eyeRight2RightAni forKey:@"eyeRight2Animation"];
-            [eyeRight2RightAni setCompletionBlock:^(POPAnimation *anim, BOOL finish) {
-                [self executeHorsemanEyeAnimation];
-            }];
+            [self.eyeRight2ImageView.layer pop_addAnimation:eyeRight2RightAni forKey:@"eyeRight2Animation"];
         }];
     });
 }
@@ -657,75 +667,124 @@ static CGFloat anchor2 = -maxAnchorPointX2;
 {
     [super scrollViewContentOffsetDidChange:change];
     
-    // 在刷新的refreshing或者执行ExtraBlock的状态
-    if (self.state == MJRefreshStateRefreshing ||
-        self.state == LXTRefreshStateExtraBlocking) {
-        if (self.window == nil) return;
-        // sectionheader停留解决
-        if ( self.state == MJRefreshStateRefreshing ) {
-            self.scrollView.mj_insetT = self.refreshBlockOffsetY;
-            self.insetTDelta = _scrollViewOriginalInset.top - self.refreshBlockOffsetY;
+    if ( self.extraBlock ) {
+        // 在刷新的refreshing或者执行ExtraBlock的状态
+        if (self.state == MJRefreshStateRefreshing ||
+            self.state == LXTRefreshStateExtraBlocking) {
+            if (self.window == nil) return;
+            // sectionheader停留解决
+            if ( self.state == MJRefreshStateRefreshing ) {
+                self.scrollView.mj_insetT = self.refreshBlockOffsetY;
+                self.insetTDelta = _scrollViewOriginalInset.top - self.refreshBlockOffsetY;
+            }
+            return;
         }
-        return;
+        
+        // 跳转到下一个控制器时，contentInset可能会变
+        _scrollViewOriginalInset = self.scrollView.contentInset;
+        
+        // 当前的contentOffset
+        CGFloat offsetY = self.scrollView.mj_offsetY;
+        // 头部控件刚好出现的offsetY
+        CGFloat happenOffsetY = - self.scrollViewOriginalInset.top;
+        
+        // 如果是向上滚动到看不见头部控件，直接返回
+        // >= -> >
+        if (offsetY > happenOffsetY) return;
+        
+        // 普通 和 即将刷新 的临界点
+        CGFloat normal2pullingOffsetY = happenOffsetY - self.refreshBlockOffsetY;
+        CGFloat pullingPercent = (happenOffsetY - offsetY) / self.refreshBlockOffsetY;
+        
+        // 即将刷新 和 extraBlock 的临界点
+        CGFloat pulling2extraOffsetY = happenOffsetY - self.extraBlockOffsetY;
+        
+        if (self.scrollView.isDragging) { // 如果正在拖拽
+            
+            self.pullingPercent = pullingPercent;
+            if (self.state == MJRefreshStateIdle){
+                if ( normal2pullingOffsetY > offsetY && offsetY > pulling2extraOffsetY ) {
+                    // 转为即将刷新状态
+                    self.state = MJRefreshStatePulling;
+                }
+                else if ( offsetY <= pulling2extraOffsetY ){
+                    self.state = LXTRefreshStateExtraBlockPulling;
+                }
+                else { self.state = MJRefreshStateIdle; }
+            }
+            else if ( self.state == MJRefreshStatePulling ) {
+                if ( offsetY >= normal2pullingOffsetY ) {
+                    // 转为普通状态
+                    self.state = MJRefreshStateIdle;
+                }
+                else if ( offsetY <= pulling2extraOffsetY ){
+                    self.state = LXTRefreshStateExtraBlockPulling;
+                }
+                else { /** 状态不变 */ }
+            }
+            else if (self.state == LXTRefreshStateExtraBlockPulling){
+                if ( normal2pullingOffsetY > offsetY && offsetY > pulling2extraOffsetY ) {
+                    // 转为即将刷新状态
+                    self.state = MJRefreshStatePulling;
+                }
+                else if ( offsetY > normal2pullingOffsetY ){
+                    self.state = MJRefreshStateIdle;
+                }
+                else { /** 状态不变 */ }
+            }
+        } else {
+            if (self.state == MJRefreshStatePulling) {// 即将刷新 && 手松开
+                // 开始刷新
+                [self beginRefreshing];
+            } else if (self.state == LXTRefreshStateExtraBlockPulling) {// 即将执行Block && 手松开
+                [self beginExtraBlock];
+            } else if (pullingPercent < 1) {
+                self.pullingPercent = pullingPercent;
+            }
+        }
     }
-    
-    // 跳转到下一个控制器时，contentInset可能会变
-    _scrollViewOriginalInset = self.scrollView.contentInset;
-    
-    // 当前的contentOffset
-    CGFloat offsetY = self.scrollView.mj_offsetY;
-    // 头部控件刚好出现的offsetY
-    CGFloat happenOffsetY = - self.scrollViewOriginalInset.top;
-    
-    // 如果是向上滚动到看不见头部控件，直接返回
-    // >= -> >
-    if (offsetY > happenOffsetY) return;
-    
-    // 普通 和 即将刷新 的临界点
-    CGFloat normal2pullingOffsetY = happenOffsetY - self.refreshBlockOffsetY;
-    CGFloat pullingPercent = (happenOffsetY - offsetY) / self.refreshBlockOffsetY;
-    
-    // 即将刷新 和 extraBlock 的临界点
-    CGFloat pulling2extraOffsetY = happenOffsetY - self.extraBlockOffsetY;
-    
-    if (self.scrollView.isDragging) { // 如果正在拖拽
-        self.pullingPercent = pullingPercent;
-        if (self.state == MJRefreshStateIdle){
-            if ( normal2pullingOffsetY > offsetY && offsetY > pulling2extraOffsetY ) {
+    else{
+        // 在刷新的refreshing状态
+        if (self.state == MJRefreshStateRefreshing) {
+            if (self.window == nil) return;
+            
+            // sectionheader停留解决
+            CGFloat insetT = - self.scrollView.mj_offsetY > _scrollViewOriginalInset.top ? - self.scrollView.mj_offsetY : _scrollViewOriginalInset.top;
+            insetT = insetT > LXTDoubleRefreshBlockOffsetY + _scrollViewOriginalInset.top ? LXTDoubleRefreshBlockOffsetY + _scrollViewOriginalInset.top : insetT;
+            self.scrollView.mj_insetT = insetT;
+            
+            self.insetTDelta = _scrollViewOriginalInset.top - insetT;
+            return;
+        }
+        
+        // 跳转到下一个控制器时，contentInset可能会变
+        _scrollViewOriginalInset = self.scrollView.contentInset;
+        
+        // 当前的contentOffset
+        CGFloat offsetY = self.scrollView.mj_offsetY;
+        // 头部控件刚好出现的offsetY
+        CGFloat happenOffsetY = - self.scrollViewOriginalInset.top;
+        
+        // 如果是向上滚动到看不见头部控件，直接返回
+        // >= -> >
+        if (offsetY > happenOffsetY) return;
+        
+        // 普通 和 即将刷新 的临界点
+        CGFloat normal2pullingOffsetY = happenOffsetY - LXTDoubleRefreshBlockOffsetY;
+        CGFloat pullingPercent = (happenOffsetY - offsetY) / LXTDoubleRefreshBlockOffsetY;
+        
+        if (self.scrollView.isDragging) { // 如果正在拖拽
+            self.pullingPercent = pullingPercent;
+            if (self.state == MJRefreshStateIdle && offsetY < normal2pullingOffsetY) {
                 // 转为即将刷新状态
                 self.state = MJRefreshStatePulling;
-            }
-            else if ( offsetY <= pulling2extraOffsetY ){
-                self.state = LXTRefreshStateExtraBlockPulling;
-            }
-            else { self.state = MJRefreshStateIdle; }
-        }
-        else if ( self.state == MJRefreshStatePulling ) {
-            if ( offsetY >= normal2pullingOffsetY ) {
+            } else if (self.state == MJRefreshStatePulling && offsetY >= normal2pullingOffsetY) {
                 // 转为普通状态
                 self.state = MJRefreshStateIdle;
             }
-            else if ( offsetY <= pulling2extraOffsetY ){
-                self.state = LXTRefreshStateExtraBlockPulling;
-            }
-            else { /** 状态不变 */ }
-        }
-        else if (self.state == LXTRefreshStateExtraBlockPulling){
-            if ( normal2pullingOffsetY > offsetY && offsetY > pulling2extraOffsetY ) {
-                // 转为即将刷新状态
-                self.state = MJRefreshStatePulling;
-            }
-            else if ( offsetY > normal2pullingOffsetY ){
-                self.state = MJRefreshStateIdle;
-            }
-            else { /** 状态不变 */ }
-        }
-    } else {
-        if (self.state == MJRefreshStatePulling) {// 即将刷新 && 手松开
+        } else if (self.state == MJRefreshStatePulling) {// 即将刷新 && 手松开
             // 开始刷新
             [self beginRefreshing];
-        } else if (self.state == LXTRefreshStateExtraBlockPulling) {// 即将执行Block && 手松开
-            [self beginExtraBlock];
         } else if (pullingPercent < 1) {
             self.pullingPercent = pullingPercent;
         }
@@ -768,78 +827,134 @@ static CGFloat anchor2 = -maxAnchorPointX2;
 - (void)setState:(MJRefreshState)state
 {
     MJRefreshCheckState
-    // 下拉刷新
-    if ( state == MJRefreshStateIdle ) {
-        self.statusLabel.text = @"下拉刷新";
-        [self removeAllAnimation];
-        [self initializAutolayout];
-    }
-    // 继续下拉有惊喜
-    else if ( state == MJRefreshStatePulling ) {
-        self.statusLabel.text = @"继续下拉有惊喜";
+    if ( self.extraBlock ) {
+        // 下拉刷新
+        if ( state == MJRefreshStateIdle ) {
+            self.statusLabel.text = @"下拉刷新";
+            [self removeAllAnimation];
+            [self initializAutolayout];
+        }
+        // 继续下拉有惊喜
+        else if ( state == MJRefreshStatePulling ) {
+            self.statusLabel.text = @"继续下拉有惊喜";
+        }
+        // 刷新中
+        else if ( state == MJRefreshStateRefreshing ) {
+            self.statusLabel.text = @"刷新中";
+            [self executeAllAnimation];
+        }
+        // 松手看惊喜
+        else if ( state == LXTRefreshStateExtraBlockPulling ) {
+            self.statusLabel.text = @"松手看惊喜";
+        }
+        // 爬楼中
+        else if ( state == LXTRefreshStateExtraBlocking ) {
+            self.statusLabel.text = @"爬楼中";
+        }
         
-    }
-    // 刷新中
-    else if ( state == MJRefreshStateRefreshing ) {
-        self.statusLabel.text = @"刷新中";
-        [self executeAllAnimation];
-    }
-    // 松手看惊喜
-    else if ( state == LXTRefreshStateExtraBlockPulling ) {
-        self.statusLabel.text = @"松手看惊喜";
-
-    }
-    // 爬楼中
-    else if ( state == LXTRefreshStateExtraBlocking ) {
-        self.statusLabel.text = @"爬楼中";
-        
-    }
-    
-    // 根据状态做事情
-    if (state == MJRefreshStateIdle) {
-        if (oldState != MJRefreshStateRefreshing &&
-            oldState != LXTRefreshStateExtraBlocking) return;
-        
-        // 保存刷新时间
-        [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:self.lastUpdatedTimeKey];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        // 恢复inset和offset
-        [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
-            self.scrollView.mj_insetT += self.insetTDelta;
-            // 自动调整透明度
-            if (self.isAutomaticallyChangeAlpha) self.alpha = 0.0;
-        } completion:^(BOOL finished) {
-            self.pullingPercent = 0.0;
-        }];
-    }
-    else if (state == MJRefreshStateRefreshing) {
-        [UIView animateWithDuration:self.refreshFastAnimationDuration animations:^{
+        // 根据状态做事情
+        if (state == MJRefreshStateIdle) {
+            if (oldState != MJRefreshStateRefreshing &&
+                oldState != LXTRefreshStateExtraBlocking) return;
+            
+            // 保存刷新时间
+            [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:self.lastUpdatedTimeKey];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            // 恢复inset和offset
+            [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
+                self.scrollView.mj_insetT += self.insetTDelta;
+                // 自动调整透明度
+                if (self.isAutomaticallyChangeAlpha) self.alpha = 0.0;
+            } completion:^(BOOL finished) {
+                self.pullingPercent = 0.0;
+            }];
+        }
+        else if (state == MJRefreshStateRefreshing) {
+            [UIView animateWithDuration:self.refreshFastAnimationDuration animations:^{
+                // 增加滚动区域
+                CGFloat top = self.scrollViewOriginalInset.top + self.refreshBlockOffsetY;
+                NSLog(@"-----------------------------\n%f",top);
+                self.scrollView.mj_insetT = top;
+                // 设置滚动位置
+                self.scrollView.mj_offsetY = - top;
+            } completion:^(BOOL finished) {
+                [self delay_executeRefreshingCallback];
+            }];
+        }
+        else if (state == LXTRefreshStateExtraBlocking){
+            [self executeExtraBlockCallback];
             // 增加滚动区域
-            CGFloat top = self.scrollViewOriginalInset.top + self.refreshBlockOffsetY;
-            NSLog(@"-----------------------------\n%f",top);
+            CGFloat top = self.scrollViewOriginalInset.top - self.scrollView.contentOffset.y;
             self.scrollView.mj_insetT = top;
             // 设置滚动位置
             self.scrollView.mj_offsetY = - top;
-        } completion:^(BOOL finished) {
-            [self executeRefreshingCallback];
-        }];
+        }
     }
-    else if (state == LXTRefreshStateExtraBlocking){
-        [self executeExtraBlockCallback];
-        // 增加滚动区域
-        CGFloat top = self.scrollViewOriginalInset.top - self.scrollView.contentOffset.y;
-        self.scrollView.mj_insetT = top;
-        // 设置滚动位置
-        self.scrollView.mj_offsetY = - top;
+    else{
+        // 下拉刷新
+        if ( state == MJRefreshStateIdle ) {
+            self.statusLabel.text = @"下拉刷新";
+            [self removeAllAnimation];
+            [self initializAutolayout];
+        }
+        // 刷新中
+        else if ( state == MJRefreshStateRefreshing ) {
+            self.statusLabel.text = @"刷新中";
+            [self executeAllAnimation];
+        }
+        else {
+            self.statusLabel.text = @"松手即刷新";
+        }
+        
+        // 根据状态做事情
+        if (state == MJRefreshStateIdle) {
+            if (oldState != MJRefreshStateRefreshing) return;
+            
+            // 保存刷新时间
+            [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:self.lastUpdatedTimeKey];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            // 恢复inset和offset
+            [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
+                self.scrollView.mj_insetT += self.insetTDelta;
+                
+                // 自动调整透明度
+                if (self.isAutomaticallyChangeAlpha) self.alpha = 0.0;
+            } completion:^(BOOL finished) {
+                self.pullingPercent = 0.0;
+                
+                if (self.endRefreshingCompletionBlock) {
+                    self.endRefreshingCompletionBlock();
+                }
+            }];
+        } else if (state == MJRefreshStateRefreshing) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIView animateWithDuration:self.refreshFastAnimationDuration animations:^{
+                    CGFloat top = self.scrollViewOriginalInset.top + LXTDoubleRefreshBlockOffsetY;
+                    // 增加滚动区域top
+                    self.scrollView.mj_insetT = top;
+                    // 设置滚动位置
+                    [self.scrollView setContentOffset:CGPointMake(0, -top) animated:NO];
+                } completion:^(BOOL finished) {
+                    [self executeAllAnimation];
+                    [self delay_executeRefreshingCallback];
+                }];
+            });
+        }
     }
+}
+
+- (void)delay_executeRefreshingCallback{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.leastDurationForAnimation * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self executeRefreshingCallback];
+    });
 }
 
 #pragma mark 监听拖拽比例（控件被拖出来的比例）
 - (void)setPullingPercent:(CGFloat)pullingPercent
 {
     [super setPullingPercent:pullingPercent];
-    NSLog(@"%f",pullingPercent);
     if ( pullingPercent>0  ) {
         self.statusLabel.alpha = pullingPercent>1?1:pullingPercent;
         self.roadLineView.layer.anchorPoint = CGPointMake(0.5, pullingPercent*maxAnchorPointX2);
